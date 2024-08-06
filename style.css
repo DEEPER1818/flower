@@ -1,0 +1,888 @@
+@charset "utf-8";
+
+body {
+  margin: 0;
+}
+
+/* headerのフレックス */
+.f1 {
+  display: flex;
+  position: absolute;
+  top: 8px;
+  left: 120px;
+  gap: 770px;
+  /* 文字を画像よりも上にする */
+  z-index: 1;  
+}
+
+/* Flower&Life */
+.f1 h1 {
+  font-family: fantasy; 
+  font-weight: normal;
+}
+
+/* Flowerの「F」 */
+.span1 {
+  font-size: 60px;
+  font-family:'Times New Roman', Times, serif;
+  color: rgb(232, 184, 211);
+}
+
+/* Lifeの「L」 */
+.span2 {
+  font-size: 50px;
+  font-family:'Times New Roman', Times, serif;
+  color: rgb(237, 189, 85);
+}
+
+/* headerのフレックス */
+.f2 {
+  display: flex;
+  gap: 40px;
+}
+
+header a {
+  all: unset;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* Flower&Lifeの左の花画像 */
+.img1 {
+  position: absolute;
+  top: 45px;
+  left: 65px;
+  z-index: 2;
+}
+
+/* 自動で切り替わるimg */
+.imgs {
+  height: 630px;
+  width: 100%;
+  position: relative;
+  z-index: 0;
+}
+
+.image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  object-fit: cover;
+  border-bottom-left-radius: 20%;
+  border-bottom-right-radius: 20%;
+  box-shadow: inset 0 0 10px 10px #FFF;
+  background-size: cover;
+  background-position: center center;
+  animation: auto-img 35s infinite;
+}
+
+.src1 {
+  background-image: url(06.png);
+}
+.src2 {
+  background-image: url(03.png);
+}
+.src3 {
+  background-image: url(02.png);
+}
+.src4 {
+  background-image: url(05.png);
+}
+.src5 {
+  background-image: url(04.png);
+}
+
+.image:nth-of-type(1) {
+  animation-delay: 0s;
+}
+.image:nth-of-type(2) {
+  animation-delay: 7s;
+}
+.image:nth-of-type(3) {
+  animation-delay: 14s;
+}
+.image:nth-of-type(4) {
+  animation-delay:21s;
+}
+.image:nth-of-type(5) {
+  animation-delay: 28s;
+}
+
+@keyframes auto-img {
+  0%{ opacity: 0;}
+  5%{ opacity: 1;}
+  25%{ opacity: 1;}
+  30%{ opacity: 0;}
+  100%{ opacity: 0;}
+}
+
+main {
+  /* background: #ddd; */
+  background: rgba(232, 228, 227, 0.735);
+  text-align: center;
+  border-radius: 200px;
+  box-shadow: inset 5px 5px 10px 1px #fff;
+  padding-top: 100px;
+  padding-bottom: 88px;
+  margin-top: 32px;
+}
+
+/* ぼやかしから出てくる文字 */
+main h1 {
+  color: rgb(244, 156, 228);
+  margin-bottom: 64px;
+  font-family: 'Times New Roman', Times, serif;
+	animation-name: boyakasi;
+	animation-duration: 8s;
+	animation-fill-mode:forwards;
+}
+
+@keyframes boyakasi {
+  from {
+	filter: blur(10px);
+	transform: scale(1.02);
+  }
+
+  to {
+	filter: blur(0);
+	transform: scale(1);
+  }
+}
+
+/* 多種多様な～ */
+main h2 {
+  color: #555;
+  margin-bottom: 64px;
+}
+
+/* example～ */
+main p {
+  color: #555;
+  margin-bottom: 100px;
+}
+
+/* 花画像とcase～のフレックス */
+.f3 {
+  display: flex;
+  gap: 300px;
+  margin-left: 250px;
+  margin-bottom: 100px;
+}
+
+/* 花画像 */
+main img {
+  object-fit: cover;
+  border-radius: 30%;
+  filter: drop-shadow(20px 20px 5px #bbb);
+}
+
+/* case: ～ */
+main h3 {
+  color: #555;
+  margin: auto 0;
+  font-size: 36px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  text-shadow: 8px 8px 3px #bbb;
+}
+
+/* 花画像とcase～のフレックス逆ver. */
+.f4 {
+  display: flex;
+  /* flex-direction: row-reverse; */
+  gap: 350px;
+  margin-left: 350px;
+  margin-bottom: 64px;
+}
+
+/* 人物紹介部分 */
+#introduce {
+  background: url(18.png);
+  padding-top: 88px;
+  padding-bottom: 88px;
+  margin-top: 32px;
+  border-radius: 200px;
+  background-position: 0 0;
+  -webkit-animation: bgroop 30s linear infinite;
+  animation: bgroop 30s linear infinite;
+}
+
+/* 流れる画像 */
+@-webkit-keyframes bgroop {
+  from {
+      background-position: 0 0;
+  }
+  to {
+      background-position: -2000px 1000px;
+  }
+}
+@keyframes bgroop {
+  from {
+      background-position: 0 0;
+  }
+  to {
+      background-position: -2000px 1000px;
+  }
+}		
+
+/* フラワーデザイナー紹介 */
+#introduce h1 {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 36px;
+  color: rgb(223, 131, 186);
+  background: #fff;
+  opacity: 0.7;
+  width: 500px;
+  margin: 0 auto;
+  font-weight: bold;
+}
+
+/* 人物紹介のimg+説明 */
+.f5 {
+  display: flex;
+  margin-left: 250px;
+  margin-top: 64px;
+  gap: 120px;
+}
+
+/* 後ろ姿img */
+#introduce img {
+  object-fit: cover;
+  border-radius: 50%;
+  margin-top: 64px;
+  opacity: 0.9;
+}
+
+/* 鈴木 花菜 */
+#introduce h2 {
+  font-size: 36px;
+  margin-left: 30px;
+  margin-bottom: 30px;
+}
+
+/* 鈴木花菜の「花」 */
+.f5 span {
+  color: rgb(255, 0, 174);
+}
+
+/* 1995年生まれ～ */
+#introduce li {
+  font-size: 22px;
+  padding: 10px 0;
+}
+
+
+/* 料金紹介部分 */
+#price {
+  margin-top: 128px;
+  padding-bottom: 64px;
+}
+
+/* 料金紹介 */
+#price h1 {
+  text-align: center;
+  font-size: 28px;
+  color: rgb(208, 81, 102);
+  margin-bottom: 95px;
+}
+
+/* 1本～5本...の全体div */
+.price-div {
+  width: 800px;
+  border-top: 1px solid #333;
+  border-bottom: 1px solid #333;
+  margin: 64px auto 64px;
+}
+
+/* 1本～5本のフレックス */
+.f6 {
+  display: flex;
+  font-size: 20px;
+  padding-right: 8px;
+}
+
+/* 1本～5本部分 */
+.f6 p {
+  padding: auto 0;
+}
+
+/* + 部分 */
+.purasu {
+  font-weight: bold;
+  margin: auto 0 auto auto;
+  cursor: pointer;
+}
+
+/* + ホバー時 */
+.purasu:hover {
+  opacity: 0.6;
+}
+
+/* +を押したら+を非表示 */
+#pricepurasu.hihyouji {
+  display: none;
+}
+
+/* +を押したら+を非表示2 */
+#pricepurasu2.hihyouji {
+  display: none;
+}
+
+/* +を押したら+を非表示3 */
+#pricepurasu3.hihyouji {
+  display: none;
+}
+
+/* +を押したら+を非表示4 */
+#pricepurasu4.hihyouji {
+  display: none;
+}
+
+/* +を押したら+を非表示5 */
+#pricepurasu5.hihyouji {
+  display: none;
+}
+
+/* +を押したときの・～プラン 部分 */
+.uramenu {
+  width: 750px;
+  display: none;
+  animation: fade 2.5s ease 1 forwards;
+}
+
+/* +を押したときの表示時間 */
+@keyframes fade {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+ /* +を押したらurapriceを表示 */
+#uraprice.hyouji {
+  display: block;
+}
+
+ /* +を押したらurapriceを表示2 */
+ #uraprice2.hyouji {
+  display: block;
+}
+
+ /* +を押したらurapriceを表示3 */
+ #uraprice3.hyouji {
+  display: block;
+}
+
+ /* +を押したらurapriceを表示4 */
+ #uraprice4.hyouji {
+  display: block;
+}
+
+ /* +を押したらurapriceを表示5 */
+ #uraprice5.hyouji {
+  display: block;
+}
+
+/* ・～プラン部分 */
+.uramenu li {
+  list-style: none;
+  margin-left: 24px;
+}
+
+/* - 部分 */
+.mainasu {
+  display: none;
+  font-weight: bold;
+  margin-left: -30px;
+  cursor: pointer;
+}
+
+/* - ホバー時 */
+.mainasu:hover {
+  opacity: 0.6;
+}
+
+/* +をクリックしたら-を表示 */
+#pricemainasu.hyouji {
+  display: block;
+}
+
+/* +をクリックしたら-を表示2 */
+#pricemainasu2.hyouji {
+  display: block;
+}
+
+/* +をクリックしたら-を表示3 */
+#pricemainasu3.hyouji {
+  display: block;
+}
+
+/* +をクリックしたら-を表示4 */
+#pricemainasu4.hyouji {
+  display: block;
+}
+
+/* +をクリックしたら-を表示5 */
+#pricemainasu5.hyouji {
+  display: block;
+}
+
+/* 〇〇本～〇〇本の２番目以降に上部border */
+.f6:nth-child(n+2) {
+  border-top: 1px solid #333;
+}
+
+/* ご注文はこちらからどうぞ */
+#price a {
+  all: unset;
+  font-weight: normal;
+  color: rgb(246, 186, 224);
+  cursor: pointer;
+}
+
+/* ご注文はこちらからどうぞ */
+#price h3 {
+  margin-left: 950px;
+  margin-top: 100px;
+  font-size: 22px;
+}
+
+#price a:hover {
+  opacity: 0.7;
+}
+
+
+
+/* ここから注文入力フォームページ */
+/* 花の画像背景 */
+.body2 {
+  background-image: url(21.png);
+  background-position: center center;
+  background-size: cover;
+}
+
+/* 全体のdiv */
+.order {
+  text-align: center;
+  padding: 48px 0 48px 0;
+}
+
+.order h1 {
+  color: pink;
+  font-size: 40px;
+  font-family:"Hannari";
+}
+
+/* 必要事項～ */
+.order h2 {
+  margin-top: 48px;
+  color: rgb(91, 87, 89);
+  font-size: 22px;
+}
+
+/* formをまとめるclass */
+.forms {
+  margin-left: 360px;
+  margin-top: 88px;
+}
+
+/* input入力枠の外線の色 */
+input:focus {
+  outline: solid 2px rgb(255, 130, 151);
+}
+
+/* ・お名前～ 部分 */
+.form {
+  font-size: 18px;
+  margin-bottom: 28px;
+  text-align: left;
+}
+
+/* ・お名前２種類のtext部分 */
+.name {
+  width: 150px;
+  padding: 10px;
+}
+
+/* ・ご住所のtext部分 */
+.from {
+  width: 500px;
+  padding: 10px;
+}
+
+/* メールアドレスのtext部分 */
+.mail {
+  width: 300px;
+  padding: 10px;
+}
+
+/* 電話番号のtext部分 */
+.tel {
+  width: 75px;
+  padding: 10px;
+}
+
+/* 希望タイプとradioのフレックス */
+.index2f1 {
+  display: flex;
+  margin-bottom: 28px;
+}
+
+/* 希望タイプのtext部分のdiv */
+.radio {
+  margin-left: 105px;
+}
+
+/* 希望タイプのtext部分の囲い部分 */
+.radio fieldset {
+  padding: 16px 24px;
+  margin-bottom: 8px;
+}
+
+/* 備考欄の入力枠 */
+.form textarea {
+  resize: none;
+  width: 560px;
+  height: 120px;
+  margin-left: 250px;
+  margin-top: 16px;
+  font-size: 100%;
+}
+
+/* textarea入力枠の外線の色 */
+textarea:focus {
+  outline: solid 2px rgb(255, 130, 151);
+}
+
+/* 送信ボタン */
+.sousin {
+  all: unset;
+  cursor: pointer;
+  color: #222;
+  background: pink;
+  border: 2px solid #ccc;
+  box-shadow: 0px 8px 0 0 rgb(173, 145, 149);
+  border-radius: 24px;
+  font-size: 20px;
+  width: 200px;
+  height: 36px;
+  padding: 10px;
+  margin: 48px 360px 0 0;
+}
+
+/* 送信ボタンホバー時 */
+.sousin:hover {
+  opacity: 0.8;
+}
+
+/* 送信ボタンクリック時 */
+.sousin:active {
+  transform: translate(0,3px);
+  border: none;
+}
+
+/* buttonのa */
+.order a {
+  all: unset;
+}
+
+/* 戻るボタン */
+.back {
+  all: unset;
+  cursor: pointer;
+  color: #222;
+  border: 2px solid #ccc;
+  border-radius: 24px;
+  font-size: 20px;
+  width: 200px;
+  height: 36px;
+  padding: 10px;
+  margin: 48px 360px 32px 0;
+}
+
+/* 戻るボタンホバー時 */
+.back:hover {
+  color: white;
+  border: 2px solid #333;
+  background: #666;
+  transition: 0.7s;
+}
+
+/* 戻るボタンクリック時 */
+.back:active {
+  transform: translate(0,6px);
+}
+
+
+/* ページ最下部分 */
+footer {
+  background: #ccc;
+}
+
+/* imgと文のフレックス */
+.foodiv {
+  display: flex;
+  padding: 16px 64px;
+}
+
+/* TOP～のフレックス */
+.foodiv2 {
+  display: flex;
+  margin-left: auto;
+}
+
+/* TOP～アイコン */
+footer a{
+  all: unset;
+  cursor: pointer;
+  margin: auto 24px;
+  font-size: 18px;
+}
+
+/* TOP～アイコンホバー時 */
+footer a:hover {
+  opacity: 0.7;
+}
+
+/* © K.K部分全体div */
+.small {
+  background: #777;
+  margin: 0;
+  padding-right: 36px;
+}
+
+/* © K.K */
+.small p {
+  text-align: right;
+  display: block;
+  margin: 0;
+  color: #eee;
+}
+
+
+/* ここからindex3 */
+.body3 {
+  background-image: url(21.png);
+  background-position: center center;
+  background-size: cover;
+  height: 100%;
+  margin: 0;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+/* COMPANY */
+.company h1 {
+  text-align: center;
+  margin-bottom: 100px;
+  font-size: 38px;
+  color: pink;
+}
+
+/* 社名 〇〇 */
+.trdiv div {
+  width: 500px;
+  margin: 32px auto;
+  text-align: left;
+  font-size: 22px;
+  color: #444;
+}
+
+/* 戻るボタンのdiv */
+.combtn {
+  margin-left: 600px;
+}
+
+/* 戻るの文字を中央寄りにする */
+.company button {
+  text-align: center;
+}
+
+
+/* ここからスマホ用 */
+@media (max-width: 400px){
+  .div1 {
+    all: unset;
+    font-size: 7px;
+  }
+  .div1 span {
+    font-size: 28px;
+  }
+  .div1 br {
+    display: none;
+  }
+  .img1 {
+    display: none;
+  }
+  .f2 {
+    display: none;
+  }
+  #example h1 {
+    font-size: 12px;
+  }
+  #example h2 {
+    font-size: 10px;
+  }
+  #example p {
+    font-size: 10px;
+  }
+  #example img {
+    width: 120px;
+    height: 120px;
+  }
+  .f3 {
+    gap: 48px;
+    margin: 0 0 88px 40px;
+  }
+  #example h3 {
+    font-size: 24px;
+  }
+  .f4 {
+    gap: 48px;
+    margin: 0 0 88px 80px;
+  }
+  #introduce h1 {
+    font-size: 22px;
+    margin-left: 32px;
+  }
+  .f5 {
+    margin-left: 24px;
+    gap: 16px;
+  }
+  #introduce h2 {
+    font-size: 16px;
+  }
+  .f5 img {
+    width: 120px;
+    height: 120px;
+  }
+  #introduce li {
+    font-size: 10px;
+  }
+  #price h1 {
+    font-size: 22px;
+  }
+  .price-div {
+    width: 350px;
+  }
+  .mainasu {
+    margin-left: -465px;
+    margin-top: 29px;
+  }
+  #price p {
+    font-size: 14px;
+  }
+  #price h2 {
+    font-size: 16px;
+  }
+  #price li {
+    font-size: 8px;
+  }
+  #price h3 {
+    font-size: 13px;
+    margin: 0 0 0 160px;
+  }
+  footer {
+    padding: 0;
+  }
+  .foodiv img {
+    width: 35px;
+    height: 35px;
+  }
+  .foodiv {
+    gap: 8px;
+    padding: 8px;
+  }
+  .foodiv2 p {
+    font-size: 8px;
+    gap: 2px;
+  }
+  .foodiv a {
+    margin: auto 4px;
+  }
+  .foodiv2 img {
+    width: 15px;
+    height: 15px;
+  }
+  .small {
+    padding-right: 8px;
+  }
+  .small p {
+    font-size: 8px;
+  }
+  .body2 {
+    background-image: none;
+  }
+  .order h1 {
+    font-size: 22px;
+  } 
+  .order h2 {
+    font-size: 14px;
+}
+.forms {
+  margin-left: 8px;
+  margin-top: 65px;
+}
+.form {
+  font-size: 10px;
+}
+.name {
+  width: 100px;
+  padding: 7px;
+}
+.from {
+  width: 320px;
+  padding: 7px;
+}
+.mail {
+  width: 240px;
+  padding: 7px;
+}
+.tel {
+  width: 45px;
+  padding: 7px;
+}
+.index2f1 .form {
+  writing-mode:vertical-lr;
+}
+.radio {
+  margin-left: 16px;
+}
+.radio fieldset {
+  padding: 4px 4px;
+  margin-bottom: 8px;
+  font-size: 12px;
+}
+.form textarea {
+  resize: none;
+  width: 280px;
+  height: 80px;
+  margin-left: 50px;
+  font-size: 120%;
+}
+.sousin {
+  font-size: 10px;
+  width: 80px;
+  height: 16px;
+  margin: 48px auto 0;
+}
+.back {
+  font-size: 10px;
+  width: 80px;
+  height: 16px;
+  margin: 0 0 0 8px;
+}
+.body3 {
+  background-image: none;
+  background-color: #eee;
+}
+.trdiv div {
+  width: 350px;
+  font-size: 16px;
+}
+.combtn {
+  margin: 120px 0 0 120px;
+}
+}
+
